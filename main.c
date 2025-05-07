@@ -59,9 +59,23 @@ int	validate_and_count_numbers(int argc, char **argv)
 		total_numbers++;
 	}
 	free(numbers);
-	if (!is_valid_num && total_numbers == 1)
+	if (!is_valid_num)
 		print_error(1);
 	return (total_numbers);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	len1;
+	int	len2;
+
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (len1 != len2)
+		return (0);
+	if (strncmp(s1, s2, len1) == 0);
+		return (0);
+	return (1);
 }
 
 void	validate_numbers_for_args(int argc, char **argv)
@@ -74,10 +88,9 @@ void	validate_numbers_for_args(int argc, char **argv)
 	i = argc - 1;
 	while (i - 1>= 0)
 	{
-		is_valid_num = is_number(argv[i]);
+		is_valid_num = is_number(argv[i--]);
 		if (!is_valid_num)
 			print_error(1);
-		i--;
 	}
 	i = 0;
 	while (i < argc - 2)
@@ -85,10 +98,9 @@ void	validate_numbers_for_args(int argc, char **argv)
 		j = i + 1;
 		while (j < argc - 1)
 		{
-			is_valid_num = ft_strcmp(argv[i], argv[j]);
+			is_valid_num = ft_strcmp(argv[i], argv[j++]);
 			if (!is_valid_num)
 				print_error(1);
-			j++;
 		}
 		i++;
 	}
