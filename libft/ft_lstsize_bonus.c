@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 09:53:26 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 11:24:50 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 14:54:19 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_number *lst)
 {
 	int	count;
 

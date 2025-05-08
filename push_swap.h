@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:41:00 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 11:41:01 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 15:30:01 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 # include "libft/libft.h"
-
-typedef struct s_number
-{
-	int				content;
-	struct s_number	*next;
-}	t_number;
 
 typedef struct s_info
 {
@@ -43,4 +38,10 @@ int		validate_and_count_numbers(char **argv);
 void	validate_numbers_for_args(int argc, char **argv);
 int		get_total_numbers(int argc, char **argv);
 int		main(int argc, char **argv);
+
+void	save_args_in_array(char **argv, int total_numbers, int *num_array);
+void	save_an_arg_in_array(char *str, int *num_array);
+int		*save_nums_in_array(int argc, char **argv, int total_numbers);
+
+void	save_numbers_in_stack(int *num_array, t_info *info, int total_numbers);
 #endif

@@ -6,17 +6,17 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 18:40:19 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 11:24:48 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 14:54:43 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void	*content)
+t_number	*ft_lstnew(int content)
 {
-	t_list	*new;
+	t_number	*new;
 
-	new = (t_list *)malloc(sizeof(t_list));
+	new = (t_number *)malloc(sizeof(t_number));
 	if (!new)
 		return (NULL);
 	new->content = content;

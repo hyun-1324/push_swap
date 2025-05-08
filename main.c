@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:39:45 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 12:12:06 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 15:28:46 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,19 @@ int	get_total_numbers(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	int		total_numbers;
-	// int		*num_array;
+	int		*num_array;
 	t_info	*info;
 
 	if (argc < 2)
 		print_error(0);
 	total_numbers = get_total_numbers(argc, argv);
-	// num_array = save_nums_to_array(argc, argv, total_numbers);
+	num_array = save_nums_in_array(argc, argv, total_numbers);
 	info = init_info();
+	save_numbers_in_stack(num_array, info, total_numbers);
+	printf("%d, %d, %d\n", info->top_a->content, info->top_a->next->content, info->top_a->next->next->content);
+
+
 	free(info);
+	free(num_array);
 	return (0);
 }

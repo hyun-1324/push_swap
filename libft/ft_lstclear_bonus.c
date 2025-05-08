@@ -6,21 +6,21 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:22:18 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 11:24:37 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 15:21:10 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_number **lst)
 {
-	t_list	*cur;
+	t_number	*cur;
 
 	while (*lst)
 	{
 		cur = *lst;
 		*lst = (*lst)->next;
-		ft_lstdelone(cur, del);
+		free(cur);
 	}
 	*lst = NULL;
 }

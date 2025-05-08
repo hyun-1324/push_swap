@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:43:40 by donheo            #+#    #+#             */
-/*   Updated: 2025/04/21 11:24:41 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 15:00:30 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_number *lst, void (*f)(int))
 {
 	while (lst)
 	{
