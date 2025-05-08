@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/08 11:41:00 by donheo            #+#    #+#             */
+/*   Updated: 2025/05/08 11:41:01 by donheo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "libft/libft.h"
 
 typedef struct s_number
 {
