@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:39:50 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 12:34:16 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 16:34:44 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	is_int(char	*str)
 	{
 		i++;
 	}
-
 	if (str[i])
 		return (0);
 	else
@@ -71,7 +70,7 @@ int	compare_numbers(char **numbers)
 
 int	validate_and_count_numbers(char **argv)
 {
-	int		total_numbers;
+	size_t	total_numbers;
 	int		is_valid_num;
 	char	**numbers;
 
@@ -102,7 +101,7 @@ void	validate_numbers_for_args(int argc, char **argv)
 
 	is_valid_num = 1;
 	i = argc - 1;
-	while (i - 1 >= 0)
+	while (i >= 1)
 	{
 		is_valid_num = is_int(argv[i--]);
 		if (!is_valid_num)

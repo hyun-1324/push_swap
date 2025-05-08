@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   save_numbers.c                                     :+:      :+:    :+:   */
+/*   save_numbers_in_array.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 12:04:25 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 14:35:10 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 16:25:54 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	save_args_in_array(char **argv, int total_numbers, int *num_array)
 	int	i;
 
 	i = 1;
-	while(i < total_numbers + 1)
+	while (i < total_numbers + 1)
 	{
 		num_array[i - 1] = ft_atoi(argv[i]);
 		i++;

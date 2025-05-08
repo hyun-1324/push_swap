@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:41:00 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 15:30:01 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 16:23:59 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_info
 
 void	print_error(int error_num);
 t_info	*init_info(void);
-int		is_number(char	*str);
+int		is_int(char	*str);
 int		ft_strcmp(char *s1, char *s2);
 int		compare_numbers(char **numbers);
 int		validate_and_count_numbers(char **argv);
