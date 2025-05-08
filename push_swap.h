@@ -2,6 +2,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_number
 {
@@ -20,4 +21,13 @@ typedef struct s_info
 	t_number	*bottom_b;
 }	t_info;
 
+void	print_error(int error_num);
+t_info	*init_info(void);
+int		is_number(char	*str);
+int		ft_strcmp(char *s1, char *s2);
+int		compare_numbers(char **numbers);
+int		validate_and_count_numbers(char **argv);
+void	validate_numbers_for_args(int argc, char **argv);
+int		get_total_numbers(int argc, char **argv);
+int		main(int argc, char **argv);
 #endif
