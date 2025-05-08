@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 22:53:05 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 23:45:28 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 23:53:16 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	sa(t_info *info)
 	info->top_a = tmp;
 	write(1, "sa\n", 3);
 }
+
 void	sb(t_info *info)
 {
 	t_number	*tmp;

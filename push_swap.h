@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:41:00 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 23:46:44 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 23:53:27 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	save_numbers_in_stack(int *num_array, t_info *info);
 
 void	sort_array(int *num_array, t_info *info);
 
-
 void	sa(t_info *info);
 void	sb(t_info *info);
 void	ss(t_info *info);
@@ -60,4 +59,5 @@ void	rr(t_info *info);
 void	rra(t_info *info);
 void	rrb(t_info *info);
 void	rrr(t_info *info);
+void	rotate_down(t_number **top, t_number **bottom);
 #endif
