@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:39:50 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 16:34:44 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 22:20:08 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	is_int(char	*str)
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	len1;
-	int	len2;
+	size_t	len1;
+	size_t	len2;
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
@@ -53,8 +53,8 @@ int	ft_strcmp(char *s1, char *s2)
 
 int	compare_numbers(char **numbers)
 {
-	int	i;
-	int	is_valid_num;
+	size_t	i;
+	int		is_valid_num;
 
 	i = 1;
 	is_valid_num = 1;
@@ -70,27 +70,27 @@ int	compare_numbers(char **numbers)
 
 int	validate_and_count_numbers(char **argv)
 {
-	size_t	total_numbers;
+	size_t	num_count;
 	int		is_valid_num;
 	char	**numbers;
 
 	is_valid_num = 1;
-	total_numbers = 0;
+	num_count = 0;
 	numbers = ft_split(argv[1], ' ');
 	if (!numbers)
 		print_error(1);
 	is_valid_num = compare_numbers(numbers);
-	while (numbers[total_numbers])
+	while (numbers[num_count])
 	{
 		if (is_valid_num)
-			is_valid_num = is_int(numbers[total_numbers]);
-		free(numbers[total_numbers]);
-		total_numbers++;
+			is_valid_num = is_int(numbers[num_count]);
+		free(numbers[num_count]);
+		num_count++;
 	}
 	free(numbers);
 	if (!is_valid_num)
 		print_error(1);
-	return (total_numbers);
+	return (num_count);
 }
 
 void	validate_numbers_for_args(int argc, char **argv)
