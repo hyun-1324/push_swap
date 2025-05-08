@@ -6,21 +6,32 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:39:50 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 11:43:00 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 12:34:16 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_number(char	*str)
+int	is_int(char	*str)
 {
-	int	i;
+	int		i;
+	long	num;
 
 	i = 0;
+	num = ft_atoi(str);
+	if (num < INT_MIN || INT_MAX < num)
+		return (0);
+	if ((str[0] == '+' || str[0] == '-') && (str[1] >= '1' && str[1] <= '9'))
+		i++;
+	else if ((str[0] >= '1' && str[0] <= '9'))
+		i++;
+	else
+		return (0);
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		i++;
 	}
+
 	if (str[i])
 		return (0);
 	else
@@ -73,7 +84,7 @@ int	validate_and_count_numbers(char **argv)
 	while (numbers[total_numbers])
 	{
 		if (is_valid_num)
-			is_valid_num = is_number(numbers[total_numbers]);
+			is_valid_num = is_int(numbers[total_numbers]);
 		free(numbers[total_numbers]);
 		total_numbers++;
 	}
@@ -93,7 +104,7 @@ void	validate_numbers_for_args(int argc, char **argv)
 	i = argc - 1;
 	while (i - 1 >= 0)
 	{
-		is_valid_num = is_number(argv[i--]);
+		is_valid_num = is_int(argv[i--]);
 		if (!is_valid_num)
 			print_error(1);
 	}

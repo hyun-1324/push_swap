@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:39:45 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 11:47:44 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 12:12:06 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		print_error(0);
 	total_numbers = get_total_numbers(argc, argv);
+	// num_array = save_nums_to_array(argc, argv, total_numbers);
 	info = init_info();
 	free(info);
 	return (0);
