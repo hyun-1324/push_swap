@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:39:45 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 10:08:55 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 11:29:57 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,8 @@ int	main(int argc, char **argv)
 	save_numbers_in_stack(num_array, info);
 	sort_array(num_array, info);
 	sort_list(info);
-	free(num_array);
+	free(info->array);
 	ft_lstclear(&(info->top_a));
-	ft_lstclear(&(info->top_b));
 	free(info);
 	return (0);
 }

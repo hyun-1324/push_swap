@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_list2.c                                       :+:      :+:    :+:   */
+/*   sort_by_pivot.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 01:13:08 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 01:49:05 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 11:48:55 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	perform_joint_rotation(t_info *info, int *a, int *b)
+void	push_by_pivot(t_info *info)
 {
-	while (*a && *b && (*a > 0 && *b > 0))
+	int		pivot1;
+	int		pivot2;
+	size_t	i;
+	int		value;
+
+	pivot1 = (info->array)[info->num_count / 3];
+	pivot2 = (info->array)[info->num_count * 2 / 3];
+	i = 0;
+	value = info->top_a->content;
+	while (i < info->num_count - 3)
 	{
-		rr(info);
-		*a = *a - 1;
-		*b = *b - 1;
+		value = info->top_a->content;
+		if (value < pivot1)
+		{
+			pb(info);
+			rb(info);
+		}
+		else if (value < pivot2)
+			pb(info);
+		else
+			ra(info);
+		i++;
 	}
-	while (*a && *b && (*a < 0 && *b < 0))
-	{
-		rrr(info);
-		*a = *a + 1;
-		*b = *b + 1;
-	}
+	while (info->size_a > 3)
+		pb(info);
 }
+
 
 void	rotate_a(t_info *info, int a)
 {
@@ -60,37 +74,4 @@ void	rotate_b(t_info *info, int b)
 			b++;
 		}
 	}
-}
-
-void sort_three(t_info *info)
-{
-	int	a;
-	int	b;
-	int	c;
-
-	a = info->top_a->content;
-	b = info->top_a->next->content;
-	c = info->top_a->next->next->content;
-	if (a > b && b < c && a < c)
-		sa(info);
-	else if (a > b && b > c && a > c)
-	{
-		sa(info);
-		rra(info);
-	}
-	else if (a > b && b < c && a > c)
-		ra(info);
-	else if (a < b && b > c && a < c)
-	{
-		sa(info);
-		ra(info);
-	}
-	else if (a < b && b > c && a > c)
-		rra(info);
-}
-
-void sort_two(t_info *info)
-{
-	if (info->top_a->content > info->bottom_a->content)
-		sa(info);
 }
