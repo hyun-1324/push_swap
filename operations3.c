@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 23:21:56 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 23:53:01 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 01:17:21 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ void	rra(t_info *info)
 
 void	rrb(t_info *info)
 {
-	t_number	*prev;
-	t_number	*last;
-
 	if (info->size_b < 2)
 		return ;
 	rotate_down(&info->top_b, &info->bottom_b);
@@ -48,9 +45,6 @@ void	rrb(t_info *info)
 
 void	rrr(t_info *info)
 {
-	t_number	*prev;
-	t_number	*last;
-
 	if (info->size_a > 1)
 		rotate_down(&info->top_a, &info->bottom_a);
 	if (info->size_b > 1)

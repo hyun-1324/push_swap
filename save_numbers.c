@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 12:04:25 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 23:03:04 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/08 23:58:54 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ void	save_numbers_in_stack(int *num_array, t_info *info)
 		i++;
 	}
 	info->bottom_a = new;
-	info->size_a = info->num_count;
 }
 
 void	sort_array(int *num_array, t_info *info)

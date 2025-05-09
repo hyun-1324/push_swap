@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:41:00 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 23:53:27 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 02:36:55 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct s_info
 {
 	int			*array;
 	size_t		num_count;
-	int			size_a;
-	int			size_b;
+	size_t		size_a;
+	size_t		size_b;
 	t_number	*top_a;
 	t_number	*bottom_a;
 	t_number	*top_b;
@@ -45,8 +45,18 @@ void	save_args_in_array(char **argv, size_t num_count, int *num_array);
 void	save_an_arg_in_array(char *str, int *num_array);
 int		*save_nums_in_array(int argc, char **argv, size_t num_count);
 void	save_numbers_in_stack(int *num_array, t_info *info);
-
 void	sort_array(int *num_array, t_info *info);
+
+void	push_by_pivot(t_info *info);
+int		find_insert_pos_a(int num, t_info *info);
+int		is_better_move(int a, int b, int new_a, int new_b);
+void	get_best_rotate(t_info *info, int *a, int *b);
+void	perform_joint_rotation(t_info *info, int *a, int *b);
+void	rotate_a(t_info *info, int a);
+void	rotate_b(t_info *info, int b);
+void	sort_three(t_info *info);
+void	sort_two(t_info *info);
+void	sort_list(t_info *info);
 
 void	sa(t_info *info);
 void	sb(t_info *info);
