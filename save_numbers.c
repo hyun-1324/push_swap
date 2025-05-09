@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 12:04:25 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/08 23:58:54 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 15:07:50 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,5 @@ void	sort_array(int *num_array, t_info *info)
 		i++;
 	}
 	info->array = num_array;
+	get_index_from_value(num_array, info);
 }

@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:41:00 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 12:25:35 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 14:44:22 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_number
 {
 	int				content;
+	size_t			index;
 	struct s_number	*next;
 }	t_number;
 
@@ -51,7 +52,9 @@ void		save_an_arg_in_array(char *str, int *num_array);
 int			*save_nums_in_array(int argc, char **argv, size_t num_count);
 void		save_numbers_in_stack(int *num_array, t_info *info);
 void		sort_array(int *num_array, t_info *info);
+void		get_index_from_value(int *sorted_a, t_info *info);
 
+void		choose_three_biggest_nums(t_info *info);
 void		push_by_pivot(t_info *info);
 int			find_insert_pos_a(int num, t_info *info);
 int			is_better_move(int a, int b, int new_a, int new_b);

@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:39:50 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 09:19:36 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 15:11:25 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	is_int(char	*str)
 		i++;
 	else if ((str[0] >= '1' && str[0] <= '9'))
 		i++;
-	else if (((str[0] == '+' || str[0] == '-') && (str[1] >= '0') &&\
+	else if (((str[0] == '+' || str[0] == '-') && (str[1] >= '0') && \
 	!str[2]) || (str[0] == '0' && !str[1]))
 		return (1);
 	else
@@ -79,6 +79,8 @@ int	validate_and_count_numbers(char **argv)
 
 	is_valid_num = 1;
 	num_count = 0;
+	if (!ft_strncmp(argv[1], " ", 1) || !ft_strncmp(argv[1], "", 1))
+		print_error(1);
 	numbers = ft_split(argv[1], ' ');
 	if (!numbers)
 		print_error(1);

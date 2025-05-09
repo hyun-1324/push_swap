@@ -6,11 +6,22 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 01:13:08 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 11:48:55 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 13:59:49 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	choose_three_biggest_nums(t_info *info)
+{
+	while (info->size_a > 3)
+	{
+		if (info->top_a->index >= info->num_count - 3)
+			ra(info);
+		else
+			pb(info);
+	}
+}
 
 void	push_by_pivot(t_info *info)
 {
@@ -37,10 +48,8 @@ void	push_by_pivot(t_info *info)
 			ra(info);
 		i++;
 	}
-	while (info->size_a > 3)
-		pb(info);
+	choose_three_biggest_nums(info);
 }
-
 
 void	rotate_a(t_info *info, int a)
 {

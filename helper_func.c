@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:49:49 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 12:00:10 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 13:52:48 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,29 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 	}
 	dst[i] = '\0';
 	return (result);
+}
+
+void	get_index_from_value(int *sorted_a, t_info *info)
+{
+	size_t		i;
+	size_t		j;
+	t_number	*num;
+
+	i = 0;
+	num = info->top_a;
+	while (i < info->num_count)
+	{
+		j = 0;
+		while (num)
+		{
+			if (num->content == sorted_a[j])
+			{
+				num->index = j;
+				num = num->next;
+				break ;
+			}
+			j++;
+		}
+		i++;
+	}
 }

@@ -6,13 +6,13 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:44:19 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 12:21:50 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 13:03:55 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_three(t_info *info)
+void	sort_three(t_info *info)
 {
 	int	a;
 	int	b;
@@ -39,7 +39,7 @@ void sort_three(t_info *info)
 		rra(info);
 }
 
-void sort_two(t_info *info)
+void	sort_two(t_info *info)
 {
 	if (info->top_a->content > info->bottom_a->content)
 		sa(info);
@@ -59,7 +59,8 @@ void	is_sorted(t_info *info)
 		i++;
 		num_to_check = num_to_check->next;
 	}
-	return (free(info->array), ft_lstclear(&info->top_a), free(info), print_error(0));
+	free(info->array);
+	return (ft_lstclear(&info->top_a), free(info), print_error(0));
 }
 
 void	rotate_a_to_min(t_info *info)
@@ -67,12 +68,12 @@ void	rotate_a_to_min(t_info *info)
 	size_t	i;
 
 	i = 0;
-	 while ((info->array)[i] > info->top_a->content)
+	while ((info->array)[i] > info->top_a->content)
 		i++;
-	 if (i > info->num_count / 2)
-	 	while (info->top_a->content != (info->array)[0])
+	if (i > info->num_count / 2)
+		while (info->top_a->content != (info->array)[0])
 			ra(info);
-	 else
+	else
 		while (info->top_a->content != (info->array)[0])
 			rra(info);
 }

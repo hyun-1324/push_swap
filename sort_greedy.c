@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 22:23:30 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 11:49:21 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 13:04:11 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,3 @@ void	perform_joint_rotation(t_info *info, int *a, int *b)
 		*b = *b + 1;
 	}
 }
-
