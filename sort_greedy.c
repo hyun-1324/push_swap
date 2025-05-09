@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 22:23:30 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 16:06:55 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 21:24:02 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,25 @@ int	find_insert_pos_a(int num, t_info *info)
 {
 	t_number	*tmp;
 	int			i;
+	int			next;
 
 	i = 0;
 	tmp = info->top_a;
-	while (tmp && tmp->content < num)
+	while (tmp)
 	{
-		i++;
+		if (tmp->next)
+			next = tmp->next->content;
+		else
+			next = info->top_a->content;
+		if ((num > tmp->content && num < next) ||
+			(tmp->content > next && (num > tmp->content || num < next)))
+			break;
 		tmp = tmp->next;
+		i++;
 	}
-	if (i >= ((int)info->size_a + 1) / 2)
-		i = ((int)info->size_b - i) * (-1);
-	return (i);
+	if (i + 1 >= (int)(info->size_a + 1) / 2)
+		return ((int)info->size_a - (i + 1)) * -1;
+	return (i + 1);
 }
 
 int	is_better_move(int a, int b, int new_a, int new_b)

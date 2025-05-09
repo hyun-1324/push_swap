@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 01:13:08 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 15:46:56 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/09 20:52:05 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,18 @@ void	push_by_pivot(t_info *info)
 	int		pivot1;
 	int		pivot2;
 	size_t	i;
-	int		value;
 
 	pivot1 = (info->array)[info->num_count / 3];
 	pivot2 = (info->array)[info->num_count * 2 / 3];
 	i = 0;
-	value = info->top_a->content;
-	while (i < info->num_count - 3)
+	while (i < info->num_count)
 	{
-		value = info->top_a->content;
-		if (value < pivot1)
+		if (info->top_a->content < pivot1)
 		{
 			pb(info);
 			rb(info);
 		}
-		else if (value < pivot2)
+		else if (info->top_a->content < pivot2)
 			pb(info);
 		else
 			ra(info);
