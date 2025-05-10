@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:41:00 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/10 09:41:22 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/10 10:11:42 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_info
 }	t_info;
 
 void		print_error(int error_num);
-t_info		*init_info(size_t num_count);
+t_info		*init_info(size_t num_c);
 int			main(int argc, char **argv);
 
 int			is_int(char	*str);
