@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:44:19 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 20:52:02 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/10 09:41:46 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void	rotate_a_to_min(t_info *info)
 
 void	sort_list(t_info *info)
 {
-	int	a;
-	int	b;
+	int	a_steps;
+	int	b_steps;
 
 	is_sorted(info);
 	if (info->num_count > 3)
@@ -90,12 +90,12 @@ void	sort_list(t_info *info)
 		sort_three(info);
 		while (info->size_b)
 		{
-			a = 0;
-			b = 0;
-			get_best_rotate(info, &a, &b);
-			perform_joint_rotation(info, &a, &b);
-			rotate_a(info, a);
-			rotate_b(info, b);
+			a_steps = 0;
+			b_steps = 0;
+			get_best_rotate(info, &a_steps, &b_steps);
+			perform_joint_rotation(info, &a_steps, &b_steps);
+			rotate_a(info, a_steps);
+			rotate_b(info, b_steps);
 			pa(info);
 		}
 		rotate_a_to_min(info);

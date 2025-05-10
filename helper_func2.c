@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:53:45 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 13:17:20 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/10 09:34:16 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,29 @@ void	ft_lstadd_back(t_number **lst, t_number *new)
 	while (current->next != NULL)
 		current = current->next;
 	current->next = new;
+}
+
+void	get_index_from_value(int *sorted_a, t_info *info)
+{
+	size_t		i;
+	size_t		j;
+	t_number	*num;
+
+	i = 0;
+	num = info->top_a;
+	while (i < info->num_count)
+	{
+		j = 0;
+		while (num)
+		{
+			if (num->content == sorted_a[j])
+			{
+				num->index = j;
+				num = num->next;
+				break ;
+			}
+			j++;
+		}
+		i++;
+	}
 }

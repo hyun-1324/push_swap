@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:39:50 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 15:11:25 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/10 09:36:36 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	validate_and_count_numbers(char **argv)
 
 	is_valid_num = 1;
 	num_count = 0;
-	if (!ft_strncmp(argv[1], " ", 1) || !ft_strncmp(argv[1], "", 1))
+	if (!ft_memcmp(argv[1], " ", 2) || !ft_memcmp(argv[1], "", 1))
 		print_error(1);
 	numbers = ft_split(argv[1], ' ');
 	if (!numbers)

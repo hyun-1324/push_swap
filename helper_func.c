@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:49:49 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 13:52:48 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/10 09:37:00 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,27 +81,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 	return (result);
 }
 
-void	get_index_from_value(int *sorted_a, t_info *info)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
-	size_t		j;
-	t_number	*num;
+	size_t				i;
+	const unsigned char	*ptr1;
+	const unsigned char	*ptr2;
 
+	ptr1 = (const unsigned char *)s1;
+	ptr2 = (const unsigned char *)s2;
 	i = 0;
-	num = info->top_a;
-	while (i < info->num_count)
+	while (i < n)
 	{
-		j = 0;
-		while (num)
-		{
-			if (num->content == sorted_a[j])
-			{
-				num->index = j;
-				num = num->next;
-				break ;
-			}
-			j++;
-		}
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
 		i++;
 	}
+	return (0);
 }

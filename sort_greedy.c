@@ -6,16 +6,16 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 22:23:30 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 21:24:02 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/10 09:43:28 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_best_rotate(t_info *info, int *a, int *b)
+void	get_best_rotate(t_info *info, int *a_steps, int *b_steps)
 {
-	int			insert_pos_in_a;
-	int			steps_to_top_in_b;
+	int			new_a_steps;
+	int			new_b_steps;
 	size_t		i;
 	int			num;
 	t_number	*stack_b;
@@ -25,16 +25,16 @@ void	get_best_rotate(t_info *info, int *a, int *b)
 	while (i < info->size_b)
 	{
 		num = stack_b->content;
-		insert_pos_in_a = find_insert_pos_a(num, info);
+		new_a_steps = find_insert_pos_a(num, info);
 		if (i >= (info->size_b + 1) / 2)
-			steps_to_top_in_b = (info->size_b - i) * (-1);
+			new_b_steps = (info->size_b - i) * (-1);
 		else
-			steps_to_top_in_b = i;
+			new_b_steps = i;
 		if (i == 0 || \
-			is_better_move(*a, *b, insert_pos_in_a, steps_to_top_in_b))
+			is_better_move(*a_steps, *b_steps, new_a_steps, new_b_steps))
 		{
-			*a = insert_pos_in_a;
-			*b = steps_to_top_in_b;
+			*a_steps = new_a_steps;
+			*b_steps = new_b_steps;
 		}
 		stack_b = stack_b->next;
 		i++;
@@ -55,14 +55,14 @@ int	find_insert_pos_a(int num, t_info *info)
 			next = tmp->next->content;
 		else
 			next = info->top_a->content;
-		if ((num > tmp->content && num < next) ||
+		if ((num > tmp->content && num < next) || \
 			(tmp->content > next && (num > tmp->content || num < next)))
-			break;
+			break ;
 		tmp = tmp->next;
 		i++;
 	}
 	if (i + 1 >= (int)(info->size_a + 1) / 2)
-		return ((int)info->size_a - (i + 1)) * -1;
+		return (((int)info->size_a - (i + 1)) * -1);
 	return (i + 1);
 }
 

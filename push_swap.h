@@ -6,7 +6,7 @@
 /*   By: donheo <donheo@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:41:00 by donheo            #+#    #+#             */
-/*   Updated: 2025/05/09 14:44:22 by donheo           ###   ########.fr       */
+/*   Updated: 2025/05/10 09:41:22 by donheo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		choose_three_biggest_nums(t_info *info);
 void		push_by_pivot(t_info *info);
 int			find_insert_pos_a(int num, t_info *info);
 int			is_better_move(int a, int b, int new_a, int new_b);
-void		get_best_rotate(t_info *info, int *a, int *b);
+void		get_best_rotate(t_info *info, int *a_steps, int *b_steps);
 void		perform_joint_rotation(t_info *info, int *a, int *b);
 void		rotate_a(t_info *info, int a);
 void		rotate_b(t_info *info, int b);
@@ -85,6 +85,7 @@ char		**ft_split(char const *s, char c);
 long		ft_atoi(const char *str);
 size_t		ft_strlen(const char *s);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dsize);
 t_number	*ft_lstnew(int content);
 void		ft_lstclear(t_number **lst);
