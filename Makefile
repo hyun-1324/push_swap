@@ -1,10 +1,21 @@
 NAME = push_swap
 
-SRCS	=  ft_split.c helper_func.c helper_func2.c data_validation.c \
-		  main.c operations1.c operations2.c operations3.c\
-		  sort_by_pivot.c sort_greedy.c sort_utils.c save_numbers.c
+SRCS	=   src/main.c \
+			src/parse/parse_input.c \
+			src/parse/data_validation.c \
+			src/stack/stack_ops.c \
+			src/stack/stack_rotate.c \
+			src/stack/stack_reverse.c \
+			src/sort/sort_by_pivot.c \
+			src/sort/sort_greedy.c \
+			src/sort/sort_utils.c \
+			src/utils/ft_split.c \
+			src/utils/common_utils.c \
+			src/utils/common_utils2.c
 
 OBJS = $(SRCS:.c=.o)
+
+INCLUDE = -Iinclude
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -15,8 +26,8 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o : %.c
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean :
 	$(RM) $(OBJS)
